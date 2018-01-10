@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<header>
+  <h1>Adidas</h1>
+</header>
+<% @products.each do |product| %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+      <%= image_tag product.picture.url if product.picture? %>
+      </div>
+      <h5><%= product.name %></h2>
+      <h5>Price: <%= product.price %> $</h3>
+      <h5>Size: <%= product.size %></h3>
+      <%= link_to 'Show', product %>
+      <%= link_to 'Edit', edit_product_path(product) %>
+      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <% end %>
+  </div>
+</div>
+<%= link_to 'New Product', new_product_path %>

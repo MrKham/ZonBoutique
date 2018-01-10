@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<span class="content">
+  <%= image_tag @product.picture.url if @product.picture? %>
+</span>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @product.size %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
