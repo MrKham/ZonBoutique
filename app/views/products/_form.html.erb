@@ -25,6 +25,10 @@
     <%= form.label :size %>
     <%= form.text_field :size, id: :product_size %>
   </div>
+  <div clas="field">
+    <%= form.label :Trademark %>
+    <%= select_tag "product[trademark_id]", options_from_collection_for_select(@trademark,"id","name") %>
+  </div>
 
   <span class="picture">
     <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>

@@ -1,0 +1,22 @@
+<%= form_with(model: trademark, local: true) do |form| %>
+  <% if trademark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trademark.errors.count, "error") %> prohibited this trademark from being saved:</h2>
+
+      <ul>
+      <% trademark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :trademark_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 <header>
-  <h1>Adidas</h1>
+  <h1>Products</h1>
 </header>
 <% @products.each do |product| %>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4">
       <div>
-      <%= image_tag product.picture.url if product.picture? %>
+        <%= image_tag product.picture.url if product.picture? %>
       </div>
       <h5><%= product.name %></h2>
       <h5>Price: <%= product.price %> $</h3>
