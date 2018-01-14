@@ -1,0 +1,12 @@
+$(function() {
+  $('#btn-view').click(function()
+  {
+    var product = JSON.parse($(this).attr('data-product'));
+    $('#product-label-modal').html(product.name);
+    $('#product-price-modal').html(product.price);
+    $('#product-picture-modal').html(product.picture);
+    $('#product-size-modal').html(product.size);
+    $('#order-modal').modal('show');
+
+  });
+});

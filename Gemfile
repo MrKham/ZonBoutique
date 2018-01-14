@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave', '1.2.2'
 gem 'mini_magick', '4.7.0'
 gem 'bootstrap-sass', '3.3.7'
+gem 'jquery-rails'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'

@@ -2,6 +2,7 @@
 <header>
   <h1>Products</h1>
 </header>
+<%= link_to 'New Product', new_product_path %>
 <% @products.each do |product| %>
 <div class="container-fluid">
   <div class="row">
@@ -12,11 +13,18 @@
       <h5><%= product.name %></h2>
       <h5>Price: <%= product.price %> $</h3>
       <h5>Size: <%= product.size %></h3>
-      <%= link_to 'Show', product %>
+      <button type="button" class="btn btn-sm btn-info" data-product="<% product.to_json %>" id="btn-view">
+        View Detail
+      </button>
+      <button type="button" class="btn btn-sm btn-info">
+        Add to Cart
+      </button>
+      <br>
+      <%= link_to 'Show', product, :id => 'login', "data-toggle" => "modal", 'data-target' => '#viewModal' %>
       <%= link_to 'Edit', edit_product_path(product) %>
       <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
     <% end %>
+    <%= render "products/modal" %>
   </div>
 </div>
-<%= link_to 'New Product', new_product_path %>

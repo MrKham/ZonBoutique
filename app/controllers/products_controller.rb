@@ -4,9 +4,24 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @trademarks = Trademark.all
   end
 
   def show
+    product = Product.find(params[:id])
+    respond_to do |format|
+      format.html{}
+      format.js
+      format.json do
+        result = {
+          image_product: product.picture,
+          name_product: product.name,
+          size_product: product.size,
+          price_product: product.price
+        }
+        render json: result
+      end
+    end
   end
 
   def new

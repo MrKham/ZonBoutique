@@ -43,9 +43,7 @@
       <h5><%= product.name %></h2>
       <h5>Price: <%= product.price %> $</h3>
       <h5>Size: <%= product.size %></h3>
-      <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#viewModal">
-        View
-      </button>
+      <%= button_to "View", class: "btn btn-sm btn-info" , :id => 'viewdetail', "data-toggle" => "modal", 'data-target' => '#viewModal' %>
       <button type="button" class="btn btn-sm btn-info">
         Add to Cart
       </button>
