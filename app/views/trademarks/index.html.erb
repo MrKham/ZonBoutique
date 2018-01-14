@@ -1,16 +1,15 @@
 <p id="notice"><%= notice %></p>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <h1>Zon Shoes</h1>
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
       <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
-
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-             <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          <button type="button" class="navbar-toggle"
+          data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span><span class="icon-bar"></span>
+             <span class="icon-bar"></span>
           </button> <a class="navbar-brand" href="trademarks">Trademark</a>
         </div>
 
@@ -36,18 +35,7 @@
   </div>
   <div class="row" id="items">
     <% @products.each do |product| %>
-    <div class="col-md-4">
-      <div>
-        <%= image_tag product.picture.url if product.picture? %>
-      </div>
-      <h5><%= product.name %></h2>
-      <h5>Price: <%= product.price %> $</h3>
-      <h5>Size: <%= product.size %></h3>
-      <%= button_to "View", class: "btn btn-sm btn-info" , :id => 'viewdetail', "data-toggle" => "modal", 'data-target' => '#viewModal' %>
-      <button type="button" class="btn btn-sm btn-info">
-        Add to Cart
-      </button>
-    </div>
+      <%= render "products/show_products", product: product %>
     <% end %>
   </div>
 </div>

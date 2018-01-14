@@ -1,0 +1,44 @@
+<div class="col-md-4">
+  <div>
+    <%= image_tag product.picture.url if product.picture? %>
+  </div>
+  <h5><%= product.name %></h5>
+  <h5>Price: <%= product.price %> $</h5>
+  <h5>Size: <%= product.size %></h5>
+  <button type="button" class="btn btn-sm btn-info" data-toggle="modal"
+  data-target="#view-<%= product.id %>-product"  >
+    View Detail
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="view-<%= product.id %>-product" tabindex="-1"
+    role="dialog" aria-labelledby="todo-<%= product.id %>-label"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><%= product.name %></h4>
+        </div>
+          <div class="modal-body">
+            <%= image_tag product.picture.url if product.picture? %>
+            <h5>Price: <%= product.price %> $</h5>
+            <h5>Size: <%= product.size %></h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-info">
+              Add to Cart
+            </button>
+            <button type="button" class="btn btn-sm btn-info"
+            data-dismiss="modal">Close</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-sm btn-info">
+    Add to Cart
+  </button>
+  <br>
+  <%= link_to 'Show', product %>
+  <%= link_to 'Edit', edit_product_path(product) %>
+  <%= link_to 'Destroy', product,
+   method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
